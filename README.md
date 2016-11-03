@@ -22,6 +22,7 @@ duplicate-files ./some-directory --find-pattern spec\.js$ --replace-pattern spec
 ```
 
 A dry run before you break things
+-------
 ```shell
 DEBUG=duplicate-files* duplicate-files ./some-directory --dry-run --find-pattern spec\.js$ --replace-pattern spec\.js$ --string test.js
 ```
