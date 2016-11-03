@@ -1,0 +1,65 @@
+{
+  "name": "duplicate-files",
+  "version": "0.1.0",
+  "description": "Save exchange data streams to influxdb",
+  "main": "lib/index.js",
+  "scripts": {
+    "clean": "rimraf lib dist",
+    "build": "babel src --out-dir lib",
+    "lint": "eslint src test",
+    "test": "NODE_ENV=test node_modules/.bin/mocha --compilers js:babel-register --require babel-polyfill ./src/**/*.js --recursive",
+    "test:watch": "NODE_ENV=test node_modules/.bin/mocha --compilers js:babel-register --require babel-polyfill --recursive ./src/**/*.js --watch",
+    "test:cov": "node_modules/.bin/babel-node --presets es2015 es2016 stage-0 -- --plugins transform-builtin-extend -- ./node_modules/.bin/isparta cover ./node_modules/.bin/_mocha",
+    "prepublish": "npm run lint && npm run test && npm run clean && npm run build",
+    "output_nock": "node_modules/.bin/babel-node ./src/utils/nock_record.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joliveros/duplicate-files.git"
+  },
+  "keywords": [
+    "duplicate",
+    "files"
+  ],
+  "author": "joliveros",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/joliveros/duplicate-files/issues"
+  },
+  "homepage": "https://github.com/joliveros/duplicate-files#readme",
+  "bin": {
+    "duplicate-files": "./bin/duplicate-files"
+  },
+  "files": [
+    "bin",
+    "lib"
+  ],
+  "dependencies": {
+    "await-each": "^1.1.0",
+    "debug": "^2.2.0",
+    "filecopy": "^2.1.2",
+    "lodash": "^4.16.4",
+    "pattern-file-search": "^0.2.1",
+    "yargs": "^6.0.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.16.0",
+    "babel-core": "^6.17.0",
+    "babel-eslint": "^7.0.0",
+    "babel-plugin-transform-async-to-generator": "^6.16.0",
+    "babel-plugin-transform-object-rest-spread": "^6.16.0",
+    "babel-polyfill": "^6.16.0",
+    "babel-preset-es2015-node4": "^2.1.0",
+    "babel-register": "^6.16.3",
+    "chai": "^3.5.0",
+    "eslint": "^3.7.1",
+    "eslint-config-airbnb": "12.0.0",
+    "eslint-plugin-import": "^1.16.0",
+    "eslint-plugin-jsx-a11y": "^2.2.3",
+    "eslint-plugin-react": "^6.4.1",
+    "mocha": "^3.1.1",
+    "rimraf": "^2.5.4",
+    "webpack": "^1.13.2",
+    "webpack-dev-server": "^1.16.2"
+  }
+}
