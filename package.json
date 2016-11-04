@@ -1,6 +1,6 @@
 {
   "name": "duplicate-files",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Duplicate files easily.",
   "main": "lib/index.js",
   "scripts": {

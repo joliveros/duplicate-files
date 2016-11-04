@@ -18,13 +18,13 @@ Run
 -------
 
 ```shell
-duplicate-files ./some-directory --find-pattern spec\.js$ --replace-pattern spec\.js$ --string test.js
+duplicate-files ./some-directory --find-pattern 'spec\.js$' --replace-pattern 'spec\.js$' --string test.js
 ```
 
 A dry run before you break things
 -------
 ```shell
-DEBUG=duplicate-files* duplicate-files ./some-directory --dry-run --find-pattern spec\.js$ --replace-pattern spec\.js$ --string test.js
+DEBUG=duplicate-files* duplicate-files ./some-directory --dry-run --find-pattern 'spec\.js$' --replace-pattern 'spec\.js$' --string test.js
 ```
 
 License
